@@ -3,7 +3,7 @@ const contenedor = document.getElementById("productCardContainer")
 const importeTotalCarrito = document.querySelector("p#importeTotalCarrito")
 const btnComprar = document.querySelector("button#btnComprar")
 const btnVolver = document.querySelector("button.back")
-const home = "main.html"
+const home = "index.html"
 
 function eliminarElemento(array, id) {
     const index = array.findIndex(elemento => elemento.id === id);
