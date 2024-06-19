@@ -1,19 +1,17 @@
-/* -----------------------------------------------------RESET-------------------------------------------------------------------------------------- */
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
 /*-----------------------------------------------------GENERALES-------------------------------------------------------------------------------------*/
 body {
     font-family: sans-serif;
-    background-color: #fff ;
+    background: linear-gradient(to bottom, #2196f3, #000000);
 }
 
+header {
+    position: absolute;
+    top: 0;
+}
 .contenedor_checkout {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .wrapper {
@@ -27,237 +25,95 @@ body {
     text-align: center;
 }
 
-#btnComprar {
-    background-color: #ff9913; /* Color de fondo anaranjado */
-    color: #ffffff; /* Color de letra blanco */
+#btnComprar,.back {
+    background-color: green;
+    color: #ffffff; 
     border: none;
-    border-radius: 8px; /* Bordes más redondeados */
+    border-radius: 8px;  
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
     font-weight: bold;
-    font-size: 16px; /* Tamaño de fuente */
-    padding: 12px 24px; /* Espaciado interno */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
+    font-size: 16px; 
+    padding: 12px 24px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
 }
 
-#btnComprar:hover {
-    background-color: #e88b00; /* Color de fondo al pasar el mouse */
-    transform: scale(1.05); /* Aumentar ligeramente el tamaño al pasar el mouse */
+#btnComprar:hover,.back:hover {
+    background-color: #2196f3;
+    transform: scale(1.05); 
 }
 
-#btnComprar:active {
-    background-color: #cc7800; /* Color de fondo al hacer clic */
-    transform: scale(0.95); /* Reducir ligeramente el tamaño al hacer clic */
+#btnComprar:active,.back:active { 
+    transform: scale(0.95); 
 }
 
-#btnComprar:focus {
+#btnComprar:focus,.back:focus {
     outline: none;
-    box-shadow: 0 0 0 4px rgba(255, 153, 19, 0.4); /* Resaltado al estar enfocado */
+    box-shadow: 0 0 0 4px rgba(255, 153, 19, 0.4); 
+}
+.back{
+    background-color: red;
 }
 
-
-
-/* @import url("https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic");
-@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css");
-@import url("https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css");
-
-* {
-    margin: 10px;
-}
-
-search {
-    margin: 0 auto;
-    max-width: 80%;
-}
-
-footer {
-    margin: 0 auto;
-    max-width: 900px;
-    background-color: rgb(248, 248, 248);
-    font-weight: 700;
-    padding: 30px;
-    text-align: center;
-    border-top-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-}
-
-div#mensajeComprar {
-    visibility: hidden;
-    margin: 0 auto;
-    width: 600px;
-    padding: 20px;
-    background-color: rgb(153, 215, 153);
-    color: white;
-    font-weight: 700;
-    border-radius: 10px;
-    box-shadow: 6px 6px 16px lightgray;
-}
-
-dialog {
-    background-color: green;
-    color: white;
-}
-
-.mostrar-mensaje {
-    visibility: visible !important;
-}
-
-.quitar-carrito {
-    cursor: pointer;
-}
-
-.imagen-carrito {
-    height: 40px;
-}
-
-.total-carrito {
-    font-size: 18px;
-    font-weight: 700;
-}
-
-img.logo {
-    display: inline;
-    width: 48px;
-    float: right;
-    margin-top: 26px;
-    cursor: pointer;
-}
-
-div.header {
-    display: inline;
-}
-
-div.carrito span {
-    font-weight: 700;
-}
-
-.centrar-div {
-    text-align: center;
-}
-
-.container {
-    max-width: 900px;
-    gap: 20px;
+.actions {
     display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
+    gap: 10px; 
+    margin-top: 10px;
 }
 
-.div-card {
-    text-align: center;
-    border-radius: 5px;
-    border-width: 1px;
-    border-style: solid;
-    border-color: lightblue;
-    box-shadow: 10px 6px 6px rgba(211, 211, 211, 0.221);
-    width: 230px;
-    height: 280px;
-
-    & button {
-        flex-flow: 1;
-        margin-block-end: 6px;
-    }
+.actions button {
+    padding: 10px 20px;
+    color: #fff;
+    font-size: 16px; 
+    border: none;
+    border-radius: 5px; 
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+    transition: background-color 0.3s ease; 
 }
 
-.div-card:hover {
-    background-color:rgba(229, 248, 255, 0.456);
-    transition: .5s ease-in;
-    box-shadow: 5px 20px 60px rgba(211, 211, 211, 0.519);
+.actions button:hover {
+    opacity: 0.8; 
 }
 
-div.imagen {
-    font-size: 60px !important;
+.actions .add {
+    background-color: #28a745; 
 }
 
-div.imagen:hover {
-    transform: scale(1.25);
-    transition: .2s ease-in;
+.actions .remove {
+    background-color: #dc3545; 
 }
 
-div.producto {
-    font-size: 18px;
+.actions p {
+    color: #000;
+    font-size: 18px; 
+    font-weight: bold; 
+    margin: 0 10px; 
+    padding: 5px 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
 }
 
-div.importe {
-    font-size: 16px;
-    font-weight: 700;
-}
-
-.card button {
-    font-size: 10px;
-    width: 100px;
-    padding: 0px !important;
-}
-
-button:hover {
-    background-color: rgb(131, 51, 171) !important;
-    color: white;
-    border-color: lightgray;
-}
-
-button:active {
-    background-color: black !important;
-    color: white;
-    border-color: black;
-}
-
-.div-card-error {
-    width: auto;
-    padding: 40px;
-    max-width: 900px;
-    text-align: center;
-    border: 1px solid red;
-    border-top-right-radius: 10px;
-    border-bottom-left-radius: 10px;
-    box-shadow: 2px 2px 8px lightgrey;
-    background-color: rgba(255, 0, 0, 0.091);
-    margin-top: -10px;
-    margin-bottom: 40px;
-}
-
-.imagen-error {
-    font-size: 60px;
-}
-
-.leyenda-error {
+.amount {
+    margin-top: 10px;
     font-size: 30px;
+    font-weight: bold; 
+    text-align: center; 
+}
+
+.checkout-title {
+    margin-top: 80px; 
+    color: white; 
+    font-weight: bold; 
+    font-size: 40px;
+}
+.total {
+    font-size: 2em; 
     font-weight: 600;
+    margin-bottom: 20px; 
+    margin-top: 20px; 
+    color: white;
 }
-
-.leyenda-intento {
-    font-size: 20px;
-}
-
-@media (width <= 620px) {
-    div.header {
-        & h1 {
-            font-size: 4rem;
-        }
-
-        & img.logo {
-            width: 40px;
-        }
-
-        & h2 {
-            font-size: 2rem;
-        }
-    }
-}
-
-@media (width <= 380px) {
-    div.header {
-        & h1 {
-            font-size: 3rem;
-        }
-
-        & img.logo {
-            width: 32px;
-        }
-
-        & h2 {
-            display: none;
-        }
-    }
-} */

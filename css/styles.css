@@ -8,17 +8,32 @@
 /*-----------------------------------------------------GENERALES-------------------------------------------------------------------------------------*/
 body {
     font-family: sans-serif;
-    background-color: #000;
-    background: linear-gradient(#d4d4d4,#454545);
+    background: linear-gradient(#d4d4d4, #454545);
 }
 
-h1 {font-size: 2.5em;}
-h2{font-size: 2.7em;}
-h3{font-size: 2em;}
-p{font-size: 1.25em;}
-ul{list-style: none;}
+h1 {
+    font-size: 2.5em;
+}
 
-button , input,#buy_button{
+h2 {
+    font-size: 2.7em;
+}
+
+h3 {
+    font-size: 2em;
+}
+
+p {
+    font-size: 1.25em;
+}
+
+ul {
+    list-style: none;
+}
+
+button,
+input,
+#buy_button {
     font-size: 1em;
     font-weight: bold;
     padding: 10px 30px;
@@ -28,9 +43,8 @@ button , input,#buy_button{
     background-color: #fff;
 }
 
-
 /* HEADER */
-header{
+header {
     background-color: transparent;
     flex-wrap: wrap;
     position: fixed;
@@ -38,7 +52,7 @@ header{
     right: 0;
     width: 100vw;
     z-index: 100;
-    background: linear-gradient(to bottom, black ,transparent);
+    background: linear-gradient(to bottom, black, transparent);
     padding-top: 10px;
 }
 
@@ -49,22 +63,21 @@ header .container {
     align-items: center;
 }
 
-
-header nav{
+header nav {
     display: flex;
     flex-direction: column;
     text-align: center;
     padding-bottom: 2px;
 }
 
-header div nav a{
+header div nav a {
     padding: 5px 12px;
     text-decoration: none;
     color: white;
-    font-weight: bolder;   
+    font-weight: bolder;
 }
 
-/*todo NUEVO BARRA DE BÚSQUEDA*/
+/* NUEVO BARRA DE BÚSQUEDA */
 .search-bar-container {
     display: flex;
     align-items: center;
@@ -98,7 +111,6 @@ header div nav a{
     background-color: #e0e0e0;
 }
 
-
 /* MAIN */
 
 .button_container {
@@ -109,17 +121,12 @@ header div nav a{
     margin-top: 15px;
 }
 
-
 /* PAGINA DE PRODUCTOS */
-
-
-
 
 .products-hero__img {
     max-width: 100%;
     height: auto;
 }
-
 
 .product-card_container {
     display: flex;
@@ -127,6 +134,7 @@ header div nav a{
     align-items: center;
     flex-wrap: wrap;
 }
+
 .product-card {
     position: relative;
     margin: 10px 20px;
@@ -143,6 +151,7 @@ header div nav a{
     flex-grow: 1;
     background: linear-gradient(to bottom, #2196f3, #f8fcff);
 }
+
 /* #2196f3 #f8fcff  #00b5c6  #001d7b*/
 
 .product-card:hover {
@@ -166,10 +175,12 @@ header div nav a{
     background-color: #0000006f;
     width: 100%;
 }
+
 .product-info h3 {
     font-size: 1.5rem;
     font-weight: bold;
 }
+
 /* #0000006f */
 
 .product-info .price {
@@ -195,70 +206,90 @@ header div nav a{
     font-weight: bolder;
 }
 
-/* todo interacción con los botones js */
+/* interacción con los botones js */
 .selected {
     display: none;
 }
+
 .counter {
-    margin-left: 20px; 
-    color: #ffffff;
+    display: none;
+    position: absolute;
+    top: -12px;
+    right: -10px;
+    background: red;
+    color: white;
+    border-radius: 50%;
+    padding: 5px;
+    font-size: 10px;
+    font-weight: bold;
+    width: 20px;
+    height: 20px;
+    align-items: center;
+    justify-content: center;
 }
 
 /* MEDIA QUERIES */
 @media (min-width: 775px) {
-    /* Solo para dispositivos mas grandes */
     body {
-        background: linear-gradient(#d4d4d4,#777777); 
+        /* MODO CLARO background: linear-gradient(#d4d4d4,#777777); */
+        background: #000;
         background-position: center center;
         background-repeat: repeat;
         background-size: cover;
-    } 
+    }
+
     header .container {
         max-width: none;
         background: #000;
     }
+
     header nav {
         flex-direction: row;
         justify-content: space-around;
     }
-    header .navigation{
+
+    header .ion {
         background-image: none;
         background-color: transparent;
         background: transparent;
+        position: relative;
     }
-    
-    header div nav a{
+
+    header div nav a {
         padding: 20px 5px;
         margin-right: 0px;
         font-size: 1.5em;
     }
-    header div nav a:hover{
+
+    header div nav a:hover {
         background-color: rgb(0, 0, 150);
         /* color: rgb(255, 199, 0); */
     }
-    button,#buy_button {
+
+    button,
+    #buy_button {
         font-size: 2em;
     }
 }
 
-@media (max-width: 1200px){
+@media (max-width: 1200px) {
     header .container nav a {
         font-size: 1em;
         padding: 30px 12px;
     }
 }
 
-@media (max-width: 980px){
+@media (max-width: 980px) {
     /* Dispositivos tamaño intermedio */
     header .container nav a {
         font-size: 0.8em;
         padding: 30px 5px;
     }
-    p {font-size: 0.8em;}
+
+    p {
+        font-size: 0.8em;
+    }
 }
-
-
-
 
 @media (max-width: 775px) {
     .header_container {
@@ -266,36 +297,60 @@ header div nav a{
     }
 }
 
-
-/* LISTADO DE PRODUCTOS */
-#products {
-    background-color: #00000060;
-    background-image:
-    linear-gradient(0deg,
-    rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url(./img/paul-unsplash.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    color: #fff;
-    position: relative;
-    margin-top: 10vh;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-content: space-around;
-}
-
-body {
-    background: #000000;
-}
-
-/* todo svg carrito*/
+/*svgs*/
 .cart-container {
-    background: #ff9913;;
+    border-radius: 5px;
+    padding: 2px;
+    background: #ff9913;
+    margin-left: 30px;
+    position: relative;
+}
+
+#cart-svg {
+    height: 28px;
+    padding: 5px;
+    fill: currentColor;
+}
+
+.filter-button {
+    border-radius: 5px;
+    padding: 2px;
+    background: #ff9913;
     margin-left: 30px;
 }
-#cart-svg {
-    height: 50%;
-    padding: 5px;
+
+.filter-button svg {
+    padding: 3px;
+    height: 30px;
+    background: none;
+    border: none;
+}
+
+.d-flex {
+    display: flex;
+}
+
+/* FILTER */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    left: 0;
+    top: calc(100% + 0.25rem);
+    background-color: #fff;
+    padding: .75rem;
+    border-radius: .25rem;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.10);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: opacity 150ms ease-in-out , transform 150ms ease-in-out;
+}
+
+.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
 }
